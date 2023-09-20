@@ -163,18 +163,18 @@ reg 0 a2
 
 ```
 ___
-***Explanation of the commands :***
+**Explanation of the commands :**
 
-**spike** -
+spike-
 
-**pk** -
+pk-
 
-**until** - to make a program run till certain address
+until- to make a program run till certain address
 ___
 ```
 
 
-#### 4.Kab for Signed and unsigned integers
+#### 4.Lab for Signed and unsigned integers
 
 - Create a simple unsigned integer program to find the highest number in unsigned long long int.
 
@@ -213,12 +213,98 @@ ___
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/98644176-a9a0-41a7-9f65-3c23f90b159d"> 
 
 - The bug is maximum value of int variable is -2147483647 to 2147483648
-- Hence , we have to specify long long int to extend the value of tge answer.
+- Hence , we have to specify long long int to extend the value of the answer.
 
  <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/e2db463f-79ec-4752-bc0b-97c589e25a7d"> 
 
+
+
+## Day - 2 : Introduction to ABI and basic verification flow
+
+### Lab 1: Labwork using ABI function calls
+
+#### New Algorithm for Sum 1 to N using ASM and Simulate
+
+- Write a C program for sum of 1 to N
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/4d7d38d1-b795-43cd-9b4d-24f07e3c1d94"> 
+
+- Create assembly language program of the above c using following commands.
+
+```
+leafpad load.S &
+```
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/64c8f84f-552f-4e08-8645-c23dc6ab40cb">
+
+
+- Running both the programs
+
+  <p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/ec902000-f4c6-48aa-9959-b1be4a0fec8a">
+
+- Main program
+
+ <p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/c2c4dac3-dadf-473d-9c7e-75ebff6377ba">
+
+
+### Lab 2: Basic verification flow using iverilog
+
+#### Lab to run C program
+
+- To run the program on RISC-V CPU
+
+In the labs section. There is picorv32.v RISC-V CPU. Entire verilog netlist is shown here and also its testbench
+
+ <p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/900ff375-fe10-4848-92c0-6d906e9d8be2">
+	  <p align="center"> 
+	<img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/24634a34-17b2-45a5-970f-df7325e28dab">
+
+
+- Creating hex files. ``` rv321m.sh ``` file consists of set of scripts needed to convert into hex file and load into picorv32 memory.
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/74a7cf8a-270d-4807-8f89-36ab36b0a7a6">
+
+- At the end there are two hex files created.
+```
+firmware.hex
+```
+
+- To run the file for conversion into hex. Type the following command
+
+```
+chmod 777 rv32im.sh
+./rv321m.sh
+```
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/96d0915f-6e78-4ae8-ad28-adce31cbc106">
+	
+- This creates a hex file.
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/a9e048a6-1cc7-4019-a0ba-2b55fda05f1b">
+
+- The application pattern gets converted into bit stream and this bit stream gets loaded into the firmware.
+
+- The bit stream file looks like below image
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/ba18332f-f06a-4873-9265-9c54bb2cce9b">
+
+- This bitstream gets loaded into the memory through the testbench.
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/7335b656-825a-4075-9250-0702a063cdca">
  
+
+
+
 
 Install the dependencies using the following command :
 ```

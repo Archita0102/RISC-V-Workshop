@@ -186,9 +186,9 @@ reg 0 a2
 <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/e4a7cb2b-467a-47d8-92a4-940fe5b1e5d9"> 
 
-
-```
 ___
+```
+
 Explanation of the commands :
 
 spike-
@@ -196,9 +196,9 @@ spike-
 pk-
 
 until- to make a program run till certain address
-___
-```
 
+```
+___
 
 #### 4.Lab for Signed and unsigned integers
 
@@ -253,11 +253,68 @@ ___
 
 ## Day - 2 : Introduction to ABI and basic verification flow
 
+### Introduction to ABI and basic verification flow
+
+- Application program uses standard libraries for different programming language we willuse.
+- ISA is an interface between the OS and machine langugae (bit language). RTL helps in implementing the specifications defined by ISA on hardware.
+- ISA is visible to both OS and to programmer called as User and System ISA.
+- Application program can access some of the hardware of the OS directly through system calls. The application porgram can directly access the registers through these system calls. This calling interface is called as application binary interface.
+
+
+ <p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/16d9df19-0b8a-4711-879e-93a91f55f2f9"> 
+
+- ABI to access the hardware of the system it has to do it through registers.
+- RISCV offers 32 registers. width of the registers can be 32/64 depending on the architecture we are using.
+- RISC-V belongs to little endian memory addressing system where the data is stored in bytes starting from LSB to MSB.
+
+### Load , Add and Store Instructions
+
+- ``` ld : l stands for load and d for doubleword``` : ***ld destination , offset (source).***
+- 
+- Instruction size is 32 bits for both rv64 and rv32.
+- opcode instructs the computer to load the double word command.
+- rs1 is source register(5 bits). In this example it is 23.
+- rd is the  destination register(5 bit). Example here 8 will be represented as 01000.
+- offset will be represented in next 12 bits of immediate from 20 to 31.
+- 
+- ``` add : add two registers``` : ***add destination,source1,source2***
+- ``` sd : store double. Store the data into memory``` : ***sd data register,offset(source register)***
+
+   <p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/49ec20f2-3c5b-4dbb-9245-3e6f8c116d89"> 
+
+___
+```
+  R-type Instructions: Instructions that operate only on regiters.
+  I-Type Instructions: Instructions that operate on regiters and an immediate value.
+  S-Type Instructions: Instructions that operate on source registers only and an immediate value.
+  ``` 
+___
+
+- Regsiters used are always 5 bit. Total number of register (2^5=32). hence we have 32 bit registers in RISCV architecture.
+- Every register is given an ABI name so we can access the internal registers of riscv.
+_
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/5c773f86-7495-4223-83a0-25d008ccac47"> 
+
+
+
 ### Lab 1: Labwork using ABI function calls
 
 #### New Algorithm for Sum 1 to N using ASM and Simulate
 
-- Write a C program for sum of 1 to N
+- Writing code ina assemblr language program to compute sum of numbers from 1 to n.
+- Arguments are passed through a0,a1 and returened through a0.
+- Run the loop till we get to the end of execution.
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/025cc00c-4d8a-4920-b50e-1494f26db8ea"> 
+
+
+
+- Write a C program for sum of 1 to N. Here we have taken N=9.
 
 <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/4d7d38d1-b795-43cd-9b4d-24f07e3c1d94"> 
@@ -285,6 +342,8 @@ leafpad load.S &
 ### Lab 2: Basic verification flow using iverilog
 
 #### Lab to run C program
+
+- Load the hex file of the C program in the memory. Read the memory through the CPU and the CPU will process the contents of the memory and display the output.
 
 - To run the program on RISC-V CPU
 
@@ -333,6 +392,18 @@ chmod 777 rv32im.sh
 <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/7335b656-825a-4075-9250-0702a063cdca">
  
+
+## Day - 3 : Digtial lofic using TL Verilog and Makerchip
+
+### Combinational Logic in TL-verilog using Makerchip
+
+
+
+
+
+
+
+
 
 
 

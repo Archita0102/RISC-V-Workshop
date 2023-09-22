@@ -395,13 +395,53 @@ chmod 777 rv32im.sh
 
 ## Day - 3 : Digtial lofic using TL Verilog and Makerchip
 
-### Combinational Logic in TL-verilog using Makerchip
+### Labs for Combinational Logic in TL-verilog using Makerchip
+
+1. Introduction to the platform
+- Go to makerchip IDE. Inside the Tutorials validity select Pythagorean example
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/bf1a1281-f9c4-46fa-b2e5-f11dd4f53e0b">
+
+2. Making of an ***Inverter***
+
+- Go the the Examples option inside Learn tab. Load the default template. Write the code for inverter
+  
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/f5609010-6c3d-4e33-8bbd-ebf806116231">
+
+3. Making of a 2 input gate ***AND GATE***
+  
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/9652dc1b-436e-4133-aa58-8640ec8c1f7a">
+
+
+4. Arithmetic operators operate on binary numbers.
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/26259f74-14e8-43d4-81c0-7c385a8924e9">
+
+
+5. Muliplexer with input 8 bits - Calculator 
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/4d68d7fd-e573-4e4e-8c5a-244710ab7836">
+
+
+### Labs for Sequential Logic in TL-verilog using Makerchip
+
+1. Fibonnaci Series
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/4ef1c8a7-d696-4cfc-9543-3a42a578f0aa">
 
 
 
+2. Calculator
 
 
 
+### Pipeline logic
 
 
 

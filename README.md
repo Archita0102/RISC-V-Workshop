@@ -428,7 +428,8 @@ chmod 777 rv32im.sh
 
 <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/7923262b-1117-4b14-8942-e198396df70b">
-[calc_int2](./https://www.makerchip.com/sandbox/0M8f5hkmk/0j2hJy)
+	
+[calc_int2](https://www.makerchip.com/sandbox/0M8f5hkmk/0j2hJy)
 
      
 
@@ -447,7 +448,8 @@ chmod 777 rv32im.sh
 
 <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/1de0419f-d5d9-43d2-87ed-591cfe314539">
-       [calc_int2](./https://www.makerchip.com/sandbox/0M8f5hkmk/0wjhQO)
+	
+       [calc_int2](https://www.makerchip.com/sandbox/0M8f5hkmk/0wjhQO)
 
 
  
@@ -458,6 +460,7 @@ chmod 777 rv32im.sh
 
 a.  <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/e8525e0c-6db4-429d-bbaa-3aa917aabdb7">
+      
       [calc_int1](./https://www.makerchip.com/sandbox/0M8f5hkmk/0y8hWk)
 
 

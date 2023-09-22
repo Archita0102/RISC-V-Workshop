@@ -422,10 +422,16 @@ chmod 777 rv32im.sh
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/26259f74-14e8-43d4-81c0-7c385a8924e9">
 
 
-5. Muliplexer with input 8 bits - Calculator 
+5. Muliplexer with input 8 bits - Calculator
+
+   
 
 <p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/4d68d7fd-e573-4e4e-8c5a-244710ab7836">
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/7923262b-1117-4b14-8942-e198396df70b">
+
+
+     https://www.makerchip.com/sandbox/0M8f5hkmk/0j2hJy
+
 
 
 ### Labs for Sequential Logic in TL-verilog using Makerchip

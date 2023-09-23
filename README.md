@@ -4,73 +4,33 @@
 
 
 ## Table of Contents
-- [Day - 1 : Introduction to RISC-V ISA and GNU compiler toolchain](#day---1--introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
-    * [Tool Installation](#tool-installation)
-    * [Instruction Set Architecture (ISA)](#instruction-set-architecture-isa)
-    * [RISC-V ISA](#riscv-isa)
-    * [Application Software on Hardware flow](#application-software-on-hardware-flow)
-    * [Illustration of the RISC-V gnu toolchain](#illustration-of-the-risc-v-gnu-toolchain)
-        + [O1 mode](#o1-mode)
-        + [Ofast mode](#ofast-mode)
+- [Day - 1 : Introduction to RISC-V ISA and GNU compiler toolchain](#day---1-:-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
+    * [Introductionn](#introduction)
+    * [Lab1:Labwork for RISC-V Software toolchain](#lab1-:-labwork-for-risc-v-software-toolchain)
+        + [1.Program to compute sum from 1 to N](#1-.-program-to-compute-sum-from-1-to-n)
+        + [2.RISC-V GCC Compile and Disassemble](#2-.-risc-v-gcc-compile-and-disassemble)
+        + [3.Spike Simulation and Debug](#3-.-spike-simulation-and-debug)
+        + [4.Lab for Signed and unsigned integers](#4-.-lab-for-signed-and-unsigned-integers)
     * [Data Representation](#data-representation)
     * [Representation of Signed and Unsigned Numbers](#representation-of-signed-and-unsigned-numbers)
         + [Signed Numbers](#signed-numbers)
         + [Unsigned Numbers](#unsigned-numbers)
     * [Illustration of Signed and Unsigned Numbers in RISC-V](#illustration-of-signed-and-unsigned-numbers-in-risc-v)
         + [Unsigned Numbers](#unsigned-numbers-1)
-        + [Signed Numbers](#signed-numbers-1)
-- [Day - 2 : Introduction to ABI and Basic Verification Flow](#day---2--introduction-to-abi-and-basic-verification-flow)
-    * [RV64I Base Integer Instruction Set](#rv64i-base-integer-instruction-set)
-    * [Application Binary Interface (ABI)](#application-binary-interface-abi)
-    * [Illustration of ABI](#illustration-of-abi)
-- [Day - 3 : Digital Logic with TL-Verilog and Makerchip](#day---3--digital-logic-with-tl-verilog-and-makerchip)
-    * [Logic Gates](#logic-gates)
-    * [Multiplexer using Ternary Operator](#day---3--digital-logic-with-tl-verilog-and-makerchip)
-    * [Transaction Level (TL) - Verilog](#transaction-leveltl---verilog)
-    * [Makerchip](#makerchip)
-    * [Basic Combinational Circuits in Makerchip](#basic-combinational-circuits-in-makerchip)
-        + [Pythagorean Example Demo](#pythagorean-example-demo)
-        + [Inverter](#inverter)
-        + [AND gate](#and-gate)
-        + [OR gate](#or-gate)
-        + [XOR gate](#xor-gate)
-        + [Vector Addition](#vector-addition)
-        + [2:1 Multiplexer](#21-multiplexer)
-        + [2:1 Vector Multiplexer](#21-vector-multiplexer)
-        + [Calculator](#calculator)
-    * [Sequential Circuits](#sequential-circuits)
-    * [Basic Sequential Circuits in Makerchip](#basic-sequential-circuits-in-makerchip)
-        + [Fibonacci Series](#fibonacci-series)
-        + [Free Running Counter](#free-running-counter)
-        + [Counter-Output with Calculator Integeration](#counter-output-with-calculator-integration)
-        + [Sequential Calculator](#sequential-calculator)
-    * [Pipelining](#pipelining)
-    * [Identifiers and Types in TL Verilog](#identifiers-and-types-in-tl-verilog)
-    * [Basic Pipelined Circuits](#basic-pipelined-circuits)
-        + [Pipelined Pythagorean](#pipelined-pythagorean)
-        + [Error Detection Demo](#error-detection-demo)
-        + [Counter and Calculator in Pipeline](#counter-and-calculator-in-pipeline)
-        + [2 Cycle Calculator](#2-cycle-calculator)
-    * [Validity](#validity)
-    * [Clock Gating](#clock-gating)
-    * [Illustration of Validity](#illustration-of-validity)
-        + [Distance Accumulator](#distance-accumulator)
-        + [2 Cycle Calculator with Validity](#2-cycle-calculator-with-validity)
-        + [Calculator with Single Value Memory](#calculator-with-single-value-memory)
-- [Day - 4 : Building a RISC-V CPU core Micro-architecture](#day---4--building-a-risc-v-cpu-core-micro-architecture)
-    * [Program Counter](#program-counter)
-    * [Instruction Fetch](#instruction-fetch)
-    * [Instruction Decode](#instruction-decode)
-    * [Register File Read](#register-file-read)
-    * [ALU](#alu)
-    * [Register File Write](#register-file-write)
-    * [Branch Instructions](#branch-instructions)
+- [Day - 2 : Introduction to ABI and basic verification flow](#day---2-:-introduction-to-abi-and-basic-verification-flow)
+    * [Introduction to ABI and basic verification flow](#introduction-to-abi-and-basic-verification-flow)
+    * [Load , Add and Store Instructions](#load-,-add-and-store-instructions)
+    * [Lab 1: Labwork using ABI function calls](#lab-1-:-labwork-using-abi-function-calls)
+        + [1.New Algorithm for Sum 1 to N using ASM and Simulate](#1-.-new-algorithm-for-sum-1-to-n-using-asm-and-simulate)
+    * [Lab 2: Basic verification flow using iverilog](#lab-2-:-basic-verification-flow-using-iverilog)
+        + [1.Lab to run C program](#1-.-lab-to-run-c-program)
+-  [Day - 3 : Digtial logic using TL Verilog and Makerchip](#day---3-:-digtial-logic-using-tl-verilog-and-makerchip)
+    * [Labs for Combinational Logic in TL-verilog using Makerchip](#labs-for-combinational-logic-in-tl---verilog-using-makerchip)
+        + [1.New Algorithm for Sum 1 to N using ASM and Simulate](#1-.-new-algorithm-for-sum-1-to-n-using-asm-and-simulate)
 
-- [Day - 5 : Complete Pipelined RISC-V CPU Micro-architecture](#day---5--complete-pipelined-risc-v-cpu-micro-architecture)
-    * [Hazard in Pipeling](#hazards-in-pipelinig)
-    * [Final 4 Stage Pipelining](#final-4-stage-pipelined-logic) 
-- [Acknowledgement](#acknowledgement)
-- [References](#references)
+
+
+    
 
 ## Day - 1 : Introduction to RISC-V ISA and GNU compiler toolchain
 
@@ -303,7 +263,7 @@ _
 
 ### Lab 1: Labwork using ABI function calls
 
-#### New Algorithm for Sum 1 to N using ASM and Simulate
+#### 1.New Algorithm for Sum 1 to N using ASM and Simulate
 
 - Writing code ina assemblr language program to compute sum of numbers from 1 to n.
 - Arguments are passed through a0,a1 and returened through a0.
@@ -341,7 +301,7 @@ leafpad load.S &
 
 ### Lab 2: Basic verification flow using iverilog
 
-#### Lab to run C program
+#### 1.Lab to run C program
 
 - Load the hex file of the C program in the memory. Read the memory through the CPU and the CPU will process the contents of the memory and display the output.
 
@@ -393,14 +353,14 @@ chmod 777 rv32im.sh
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/7335b656-825a-4075-9250-0702a063cdca">
  
 
-## Day - 3 : Digtial lofic using TL Verilog and Makerchip
+## Day - 3 : Digtial logic using TL Verilog and Makerchip
 
 ### Labs for Combinational Logic in TL-verilog using Makerchip
 
 Introduction to the platform
 - Go to makerchip IDE. Inside the Tutorials validity select Pythagorean example
 
-1. Logic Gates
+####1. Logic Gates
 
 ```
 $inv = !$in;               // OR gate
@@ -415,7 +375,7 @@ $exor_g = $in1 ^ $in2;    // XOR gate
 [Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0mwh3m)
 
 
-2. Arithmetic operators operate on binary numbers
+####2. Arithmetic operators operate on binary numbers
 
 ```
 $out[4:0] = $in1[3:0] + $in2[3:0];
@@ -428,7 +388,7 @@ $out[4:0] = $in1[3:0] + $in2[3:0];
 
 
 
-3. Combinational: Calculator
+####3. Combinational: Calculator
 
 ```
 $val1 = $rand4[3:0];
@@ -452,7 +412,7 @@ $out[31:0] = $op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op == 2'b10 ? $prod
 
 ### Labs for Sequential Logic in TL-verilog using Makerchip
 
-1. Fibonnaci Series
+####1. Fibonnaci Series
 
 ```
 $num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
@@ -465,7 +425,7 @@ $num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
  
 
 
-3. Sequential Calculator
+####2. Sequential Calculator
    
    <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/44579eec-8e9e-4433-91ca-535f5316a4bc">
@@ -494,7 +454,7 @@ $out[31:0] = $reset ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op ==
 
 ### Pipeline logic
 
-1. Pythagoras with pipelined logic
+####1. Pythagoras with pipelined logic
    
 ```
 |calc
@@ -525,7 +485,7 @@ $out[31:0] = $reset ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op ==
 [Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0wjhmJ#)
 
 
-2. Calculator with piplelined logic
+####2. Calculator with piplelined logic
 
 <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/bc2d27b8-d46f-4dd9-8280-ec16aede6026">
@@ -558,7 +518,7 @@ $out[31:0] = $reset ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op ==
 [Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0y8hwV#)
 
 
-2. Cycle Calculator
+####3. Cycle Calculator
 
 <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/42700e71-b7fc-4372-b45c-04f8445549f4">

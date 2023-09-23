@@ -20,7 +20,7 @@
         + [1.Lab to run C program](#1-.-lab-to-run-c-program)
 -  [Day 3 - Digtial logic using TL Verilog and Makerchip](#day-3---digtial-logic-using-tl-verilog-and-makerchip)
     * [Labs for Combinational Logic](#labs-for-combinational-logic)
-        + [1.Logic Gates](#1-.-logic-gates)
+        + [1.New Algorithm for Sum 1 to N using ASM and Simulate](#1-.-new-algorithm-for-sum-1-to-n-using-asm-and-simulate)
         + [2.Arithmetic operators operate on binary numbers](#2-.-arithmetic-operators-operate-on-binary-numbers)
         + [3.Combinational Calculator](#3-.-combinational-calculator)
     * [Labs for Sequential Logic](#labs-for-sequential-logic)

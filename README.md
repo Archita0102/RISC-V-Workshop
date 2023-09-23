@@ -1,4 +1,4 @@
-![image](https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/bdc41138-aa40-4b7d-bd46-9db5485d8cfd)# RISCV-ISA
+# RISCV-ISA
 
 
 

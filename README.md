@@ -16,14 +16,14 @@
     * [Load , Add and Store Instructions](#load-,-add-and-store-instructions)
     * [Lab1 - Labwork using ABI function calls](#lab1---labwork-using-abi-function-calls)
         + [1.New Algorithm for Sum 1 to N using ASM and Simulate](#1-.-new-algorithm-for-sum-1-to-n-using-asm-and-simulate)
-    * [Lab 2: Basic verification flow using iverilog](#lab-2-:-basic-verification-flow-using-iverilog)
-        + [Lab2 - Basic verification flow using iverilog](#lab2---basic-verification-flow-using-iverilog)
--  [Day - 3 : Digtial logic using TL Verilog and Makerchip](#day---3-:-digtial-logic-using-tl-verilog-and-makerchip)
-    * [Labs for Combinational Logic in TL-verilog using Makerchip](#labs-for-combinational-logic-in-tl---verilog-using-makerchip)
+    * [Lab2 - Basic verification flow using iverilog](#lab2---basic-verification-flow-using-iverilog)
+        + [1.Lab to run C program](#1-.-lab-to-run-c-program)
+-  [Day 3 - Digtial logic using TL Verilog and Makerchip](#day-3---digtial-logic-using-tl-verilog-and-makerchip)
+    * [Labs for Combinational Logic](#labs-for-combinational-logic)
         + [1. Logic Gates](#1-.--logic-gates)
         + [2. Arithmetic operators operate on binary numbers](#2-.--arithmetic-operators-operate-on-binary-numbers)
         + [3. Combinational Calculator](#3-.--combinational-calculator)
-    * [Labs for Sequential Logic in TL-verilog using Makerchip](#labs-for-sequential-logic-in-tl---verilog-using-makerchip)
+    * [Labs for Sequential Logic](#labs-for-sequential-logic)
         + [1. Fibonnaci Series](#1-.--fibonnaci-series)
         + [2. Sequential Calculator](#2-.--sequential-calculator)
     * [Labs for Pipelined Logic](#labs-for-pipelined-logic)
@@ -359,9 +359,9 @@ chmod 777 rv32im.sh
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/7335b656-825a-4075-9250-0702a063cdca">
  
 
-## Day - 3 : Digtial logic using TL Verilog and Makerchip
+## Day 3 - Digtial logic using TL Verilog and Makerchip
 
-### Labs for Combinational Logic in TL-verilog using Makerchip
+### Labs for Combinational Logic
 
 Introduction to the platform
 - Go to makerchip IDE. Inside the Tutorials validity select Pythagorean example
@@ -416,7 +416,7 @@ $out[31:0] = $op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op == 2'b10 ? $prod
    
 
 
-### Labs for Sequential Logic in TL-verilog using Makerchip
+### Labs for Sequential Logic
 
 #### 1. Fibonnaci Series
 

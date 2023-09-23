@@ -947,12 +947,23 @@ Step 4
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/9576262a-8215-4aaf-bad6-5e5cd0224953">
 
 
+
+To test the code using the testbech include the line in @1 stage :
+
+``` *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9) ;```
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/562d3800-8c22-4af1-8b62-47b438e22e15">
+
+
+
+Final code
 [code](https://myth.makerchip.com/sandbox/0L9fPhqvx/0Lghqm#)
 
 
 
 
-### Branch Instructions
+
 
 
 

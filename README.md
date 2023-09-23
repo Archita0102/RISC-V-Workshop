@@ -400,36 +400,27 @@ chmod 777 rv32im.sh
 1. Introduction to the platform
 - Go to makerchip IDE. Inside the Tutorials validity select Pythagorean example
 
-<p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/bf1a1281-f9c4-46fa-b2e5-f11dd4f53e0b">
+
 
 2. Making of an ***Inverter***
 
-- Go the the Examples option inside Learn tab. Load the default template. Write the code for inverter
-  
-<p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/f5609010-6c3d-4e33-8bbd-ebf806116231">
+
 
 3. Making of a 2 input gate ***AND GATE***
   
-<p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/9652dc1b-436e-4133-aa58-8640ec8c1f7a">
+
 
 
 4. Arithmetic operators operate on binary numbers.
 
-<p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/26259f74-14e8-43d4-81c0-7c385a8924e9">
+
 
 
 5. Muliplexer with input 8 bits - Calculator
 
    
 
-<p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/7923262b-1117-4b14-8942-e198396df70b">
-	
-[calc_int2](https://www.makerchip.com/sandbox/0M8f5hkmk/0j2hJy)
+
 
      
 
@@ -439,17 +430,12 @@ chmod 777 rv32im.sh
 
 1. Fibonnaci Series
 
-<p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/4ef1c8a7-d696-4cfc-9543-3a42a578f0aa">
 
 
 
 2. Calculator
 
 <p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/1de0419f-d5d9-43d2-87ed-591cfe314539">
-	
-       [calc_int2](https://www.makerchip.com/sandbox/0M8f5hkmk/0wjhQO)
 
 
  
@@ -458,17 +444,9 @@ chmod 777 rv32im.sh
 
 - Implement the following logic
 
-a.  <p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/e8525e0c-6db4-429d-bbaa-3aa917aabdb7">
-      
-      [calc_int1](./https://www.makerchip.com/sandbox/0M8f5hkmk/0y8hWk)
 
 
 
- <p align="center"> 
-      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/229ab9f6-1dcc-4a1e-a5cf-03e4c8b2cb4e7">
-
-b. 
 
 
 

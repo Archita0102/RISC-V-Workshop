@@ -397,52 +397,199 @@ chmod 777 rv32im.sh
 
 ### Labs for Combinational Logic in TL-verilog using Makerchip
 
-1. Introduction to the platform
+Introduction to the platform
 - Go to makerchip IDE. Inside the Tutorials validity select Pythagorean example
 
+1. Logic Gates
+
+```
+$inv = !$in;               // OR gate
+$out_g = $in1 && $in2;   // AND gate
+$or_g = $in1 || $in2;    // OR gate
+$exor_g = $in1 ^ $in2;    // XOR gate
+```
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/e7316b09-7a10-4be0-9f5b-e648bce03110">
+
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0mwh3m)
 
 
-2. Making of an ***Inverter***
+2. Arithmetic operators operate on binary numbers
 
+```
+$out[4:0] = $in1[3:0] + $in2[3:0];
 
-
-3. Making of a 2 input gate ***AND GATE***
+```
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/41675757-a8ef-4544-bb9d-17479d97be94">
   
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0nZh2k)
 
 
 
-4. Arithmetic operators operate on binary numbers.
+3. Combinational: Calculator
 
+```
+$val1 = $rand4[3:0];
+$val2 = $rand4[3:0];
+$op[1:0] = $rand2[1:0];
 
+$sum[31:0] =  $val1 + $val2;
+$diff[31:0] = $val1 - $val2;
+$prod[31:0] = $val1 * $val2;
+$quot[31:0] = $val1 / $val2;
 
+$out[31:0] = $op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op == 2'b10 ? $prod : ($op == 2'b11 ? $quot : (32'b0))));
+```
 
-5. Muliplexer with input 8 bits - Calculator
-
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/eb6c0e53-cb8d-4603-9023-a1dba2132502">
+  
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0pghWZ)
    
-
-
-
-     
-
 
 
 ### Labs for Sequential Logic in TL-verilog using Makerchip
 
 1. Fibonnaci Series
 
-
-
-
-2. Calculator
+```
+$num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
+```
 
 <p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/83d769c4-fcd6-4d34-81b3-a560b3111885">
+  
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0qjh3Y)
+ 
 
+
+3. Sequential Calculator
+   
+   <p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/44579eec-8e9e-4433-91ca-535f5316a4bc">
+  
+```
+$val1 = >>1$out[31:0];
+$val2 = $rand4[3:0];
+$op[1:0] = $rand2[1:0];
+
+$sum[31:0] =  $val1 + $val2;
+$diff[31:0] = $val1 - $val2;
+$prod[31:0] = $val1 * $val2;
+$quot[31:0] = $val1 / $val2;
+
+$out[31:0] = $reset ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op == 2'b10 ? $prod : ($op == 2'b11 ? $quot : (32'b0)))));
+
+```
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/c010f4e4-169e-43a8-9be2-2daf4642208d">
+
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0vgh5J)
+ 
 
  
 
 ### Pipeline logic
 
-- Implement the following logic
+1. Pythagoras with pipelined logic
+   
+```
+|calc
+      ?$valid
+         @1
+            $aa_sq[7:0] = $aa[3:0] ** 2;
+            $bb_sq[7:0] = $bb[3:0] ** 2;
+         @2
+            $cc_sq[8:0] = $aa_sq + $bb_sq;
+         @3
+            $cc[4:0] = sqrt($cc_sq);
+
+
+   // Print
+   |calc
+      @3
+         \SV_plus
+            always_ff @(posedge clk) begin
+               if ($valid)
+                  \$display("sqrt((\%2d ^ 2) + (\%2d ^ 2)) = \%2d", $aa, $bb, $cc);
+            end
+```
+
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/8e88abe0-267c-4af4-b6c8-43eec227ac21">
+
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0wjhmJ#)
+
+
+2. Calculator with piplelined logic
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/bc2d27b8-d46f-4dd9-8280-ec16aede6026">
+
+
+```
+ $reset = *reset;
+   $val2 = $rand4[3:0];
+   $op[1:0] = $rand2[1:0];
+   |calc
+      @1
+         $reset = *reset;
+         $val1 = >>1$out[31:0];
+         $cnt = $reset ? 0 : (>>1$cnt + 1); 
+         
+         $sum[31:0] =  $val1 + $val2;
+         $diff[31:0] = $val1 - $val2;
+         $prod[31:0] = $val1 * $val2;
+         $quot[31:0] = $val1 / $val2;
+   
+         $out[31:0] = $reset ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op == 2'b10 ? $prod : ($op == 2'b11 ? $quot : (32'b0)))));
+```
+
+
+
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/4a1cdca2-08e1-459f-8cc9-6231281b4c05">
+
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0y8hwV#)
+
+
+2. Cycle Calculator
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/42700e71-b7fc-4372-b45c-04f8445549f4">
+
+```
+$reset = *reset;
+   $val2 = $rand4[3:0];
+   $op[1:0] = $rand2[1:0];
+   |calc
+      @1
+         $reset = *reset;
+         $val1 = >>2$out[31:0];
+         $valid = $reset ? 0 : (>>1$valid + 1); 
+         
+         $sum[31:0] =  $val1 + $val2;
+         $diff[31:0] = $val1 - $val2;
+         $prod[31:0] = $val1 * $val2;
+         $quot[31:0] = $val1 / $val2;
+   
+         $out[31:0] = ($reset | !$valid) ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op == 2'b10 ? $prod : ($op == 2'b11 ? $quot : (32'b0)))));
+   
+```
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/f6a13222-3cd5-4187-9b70-e28f871d1e60">
+
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0zmhZo)
+
+
+
+### Validity
 
 
 
@@ -454,6 +601,12 @@ chmod 777 rv32im.sh
 
 
 
+
+
+
+
+
+      
 
 
 Install the dependencies using the following command :

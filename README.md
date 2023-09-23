@@ -471,17 +471,7 @@ $out[31:0] = $reset ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op ==
          @2
             $cc_sq[8:0] = $aa_sq + $bb_sq;
          @3
-            $cc[4:0] = sqrt($cc_sq);
-
-
-   // Print
-   |calc
-      @3
-         \SV_plus
-            always_ff @(posedge clk) begin
-               if ($valid)
-                  \$display("sqrt((\%2d ^ 2) + (\%2d ^ 2)) = \%2d", $aa, $bb, $cc);
-            end
+            $out[4:0] = sqrt($cc_sq);
 ```
 
 
@@ -558,21 +548,129 @@ $reset = *reset;
 ### Validity
 
 
+#### 1.Pythagoras Example
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/f6a13222-3cd5-4187-9b70-e28f871d1e60">
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0JZhvO)
+
+
+#### 2.Compute Total Distance
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/a0544623-a9aa-4bc2-8e68-4495676914ca">
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/71f81d11-38df-4210-8b29-fd32cfe8f3b8a">
+
+```
+|calc
+      @1
+         $reset = *reset;
+      ?$valid
+         @1
+            $aa_sq[31:0] = $aa[3:0] * $aa;
+            $bb_sq[31:0] = $bb[3:0] * $bb;
+         @2
+            $cc_sq[31:0] = $aa_sq + $bb_sq;
+         @3
+            $cc[31:0] = sqrt($cc_sq);
+      @4
+         $tot_dist[63:0] = $reset ? 64'b0 : ($valid ?
+                (>>1$tot_dist + $cc) : $RETAIN);  
+                      //$RETAIN = >>$tot_dist
+```
+
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/cd7ef3b3-ef75-4ffd-9977-e5ab0fb4b6fe">
+
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0KOhNG)
+
+
+#### 3.Calculator with validity
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/07269879-a4f2-4a1e-934a-dc1f7d820250">
+
+```
+|calc
+      @1
+         $reset = *reset;
+         $val1 = >>2$out[31:0];
+         $valid = $reset ? 0 : (>>1$valid + 1); 
+         $valid_or_reset = $reset | $valid ;
+      ?$vaild_or_reset   
+         
+         @1
+            $sum[31:0] =  $val1 + $val2;
+            $diff[31:0] = $val1 - $val2;
+            $prod[31:0] = $val1 * $val2;
+            $quot[31:0] = $val1 / $val2;
+         @2
+            $out[31:0] = $reset  ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op == 2'b10 ? $prod : ($op == 2'b11 ? $quot : (32'b0)))));
+```
+
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/123d486e-f147-4210-90b8-472d8445415e">
+
+
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0Mjh1K)
 
 
 
+#### 4.Calculator Single Value Memory lab
+
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/0ea3e39a-168a-4ff3-b0f2-00bc0c117f56">
+
+```
+|calc
+      @1
+         $reset = *reset;
+         $val1 [31:0] = >>2$out;
+         $val2 [31:0] = $rand2[3:0];
+         $valid = $reset ? 1'b0 : >>1$valid + 1'b1 ;
+         $valid_or_reset = $valid || $reset;
+
+      ?$vaild_or_reset
+         @1   
+            $sum [31:0] = $val1 + $val2;
+            $diff[31:0] = $val1 - $val2;
+            $prod[31:0] = $val1 * $val2;
+            $div[31:0] = $val1 / $val2;
+
+         @2   
+            $mem[31:0] = $reset ? 32'b0 :
+                         ($op[2:0] == 3'b101) ? $val1 : >>2$mem ;
+
+            $out [31:0] = $reset ? 32'b0 :
+                          ($op[2:0] == 3'b000) ? $sum :
+                          ($op[2:0] == 3'b001) ? $diff :
+                          ($op[2:0] == 3'b010) ? $prod :
+                          ($op[2:0] == 3'b011) ? $quot :
+                          ($op[2:0] == 3'b100) ? >>2$mem : >>2$out ;
+```
 
 
+<p align="center"> 
+      <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/a8c7e54c-0175-4ae1-8738-1c8b38e66e33">
 
-
-
-
-
-
-
+[Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0O7hj7)
 
 
       
+## Day 4 - Digtial logic using TL Verilog and Makerchip
+
+
+
+
+
+
+
+
+
 
 
 Install the dependencies using the following command :

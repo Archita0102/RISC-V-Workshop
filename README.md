@@ -6,27 +6,33 @@
 ## Table of Contents
 - [Day 1 - Introduction to RISC V ISA and GNU compiler toolchain](#day-1---introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
     * [Introduction](#introduction)
-    * [Lab1:Labwork for RISC-V Software toolchain](#lab1-:-labwork-for-risc-v-software-toolchain)
+    * [Lab1 - Labwork for RISC-V Software toolchain](#lab1---labwork-for-risc--v-software-toolchain)
         + [1.Program to compute sum from 1 to N](#1-.-program-to-compute-sum-from-1-to-n)
         + [2.RISC-V GCC Compile and Disassemble](#2-.-risc-v-gcc-compile-and-disassemble)
         + [3.Spike Simulation and Debug](#3-.-spike-simulation-and-debug)
         + [4.Lab for Signed and unsigned integers](#4-.-lab-for-signed-and-unsigned-integers)
-    * [Data Representation](#data-representation)
-    * [Representation of Signed and Unsigned Numbers](#representation-of-signed-and-unsigned-numbers)
-        + [Signed Numbers](#signed-numbers)
-        + [Unsigned Numbers](#unsigned-numbers)
-    * [Illustration of Signed and Unsigned Numbers in RISC-V](#illustration-of-signed-and-unsigned-numbers-in-risc-v)
-        + [Unsigned Numbers](#unsigned-numbers-1)
-- [Day - 2 : Introduction to ABI and basic verification flow](#day---2-:-introduction-to-abi-and-basic-verification-flow)
+- [Day 2 - Introduction to ABI and basic verification flow](#day-2---introduction-to-abi-and-basic-verification-flow)
     * [Introduction to ABI and basic verification flow](#introduction-to-abi-and-basic-verification-flow)
     * [Load , Add and Store Instructions](#load-,-add-and-store-instructions)
-    * [Lab 1: Labwork using ABI function calls](#lab-1-:-labwork-using-abi-function-calls)
+    * [Lab1 - Labwork using ABI function calls](#lab1---labwork-using-abi-function-calls)
         + [1.New Algorithm for Sum 1 to N using ASM and Simulate](#1-.-new-algorithm-for-sum-1-to-n-using-asm-and-simulate)
     * [Lab 2: Basic verification flow using iverilog](#lab-2-:-basic-verification-flow-using-iverilog)
-        + [1.Lab to run C program](#1-.-lab-to-run-c-program)
+        + [Lab2 - Basic verification flow using iverilog](#lab2---basic-verification-flow-using-iverilog)
 -  [Day - 3 : Digtial logic using TL Verilog and Makerchip](#day---3-:-digtial-logic-using-tl-verilog-and-makerchip)
     * [Labs for Combinational Logic in TL-verilog using Makerchip](#labs-for-combinational-logic-in-tl---verilog-using-makerchip)
-        + [1.New Algorithm for Sum 1 to N using ASM and Simulate](#1-.-new-algorithm-for-sum-1-to-n-using-asm-and-simulate)
+        + [1. Logic Gates](#1-.--logic-gates)
+        + [2. Arithmetic operators operate on binary numbers](#2-.--arithmetic-operators-operate-on-binary-numbers)
+        + [3. Combinational Calculator](#3-.--combinational-calculator)
+    * [Labs for Sequential Logic in TL-verilog using Makerchip](#labs-for-sequential-logic-in-tl---verilog-using-makerchip)
+        + [1. Fibonnaci Series](#1-.--fibonnaci-series)
+        + [2. Sequential Calculator](#2-.--sequential-calculator)
+    * [Labs for Pipelined Logic](#labs-for-pipelined-logic)
+        + [1. Pythagoras with pipelined logic](#1-.--pythagoras-with-pipelined-logic)
+        + [2. Calculator with piplelined logic](#2-.--calculator-with-piplelined-logic)
+        + [3. Cycle Calculator](#3-.--cycle-calculator)
+
+
+      
 
 
 
@@ -57,7 +63,7 @@
 - ***Application binary interface(ABI)***: Keywords/Interface of the system available for the programmers where registers can be accessed directly.
 - ***Memory allocation and stack pointer***: Data transfer instructions from register and the memory.
 
-### Lab1:Labwork for RISC-V Software toolchain
+### Lab1 - Labwork for RISC-V Software toolchain
 
 #### 1.Program to compute sum from 1 to N
 
@@ -211,7 +217,7 @@ ___
 
 
 
-## Day - 2 : Introduction to ABI and basic verification flow
+## Day 2 - Introduction to ABI and basic verification flow
 
 ### Introduction to ABI and basic verification flow
 
@@ -261,7 +267,7 @@ _
 
 
 
-### Lab 1: Labwork using ABI function calls
+###  Lab1 - Labwork using ABI function calls
 
 #### 1.New Algorithm for Sum 1 to N using ASM and Simulate
 
@@ -299,7 +305,7 @@ leafpad load.S &
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/c2c4dac3-dadf-473d-9c7e-75ebff6377ba">
 
 
-### Lab 2: Basic verification flow using iverilog
+### Lab2 - Basic verification flow using iverilog
 
 #### 1.Lab to run C program
 
@@ -360,7 +366,7 @@ chmod 777 rv32im.sh
 Introduction to the platform
 - Go to makerchip IDE. Inside the Tutorials validity select Pythagorean example
 
-####1. Logic Gates
+#### 1. Logic Gates
 
 ```
 $inv = !$in;               // OR gate
@@ -375,7 +381,7 @@ $exor_g = $in1 ^ $in2;    // XOR gate
 [Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0mwh3m)
 
 
-####2. Arithmetic operators operate on binary numbers
+#### 2. Arithmetic operators operate on binary numbers
 
 ```
 $out[4:0] = $in1[3:0] + $in2[3:0];
@@ -388,7 +394,7 @@ $out[4:0] = $in1[3:0] + $in2[3:0];
 
 
 
-####3. Combinational: Calculator
+#### 3. Combinational Calculator
 
 ```
 $val1 = $rand4[3:0];
@@ -412,7 +418,7 @@ $out[31:0] = $op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op == 2'b10 ? $prod
 
 ### Labs for Sequential Logic in TL-verilog using Makerchip
 
-####1. Fibonnaci Series
+#### 1. Fibonnaci Series
 
 ```
 $num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
@@ -425,7 +431,7 @@ $num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
  
 
 
-####2. Sequential Calculator
+#### 2. Sequential Calculator
    
    <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/44579eec-8e9e-4433-91ca-535f5316a4bc">
@@ -452,9 +458,8 @@ $out[31:0] = $reset ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op ==
 
  
 
-### Pipeline logic
-
-####1. Pythagoras with pipelined logic
+### Labs for Pipelined Logic
+#### 1. Pythagoras with pipelined logic
    
 ```
 |calc
@@ -485,7 +490,7 @@ $out[31:0] = $reset ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op ==
 [Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0wjhmJ#)
 
 
-####2. Calculator with piplelined logic
+#### 2. Calculator with piplelined logic
 
 <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/bc2d27b8-d46f-4dd9-8280-ec16aede6026">
@@ -518,7 +523,7 @@ $out[31:0] = $reset ? 0 : ($op == 2'b00 ? $sum : ($op == 2'b01 ? $diff : ($op ==
 [Code](https://www.makerchip.com/sandbox/0M8f5hkmk/0y8hwV#)
 
 
-####3. Cycle Calculator
+#### 3. Cycle Calculator
 
 <p align="center"> 
       <img src="https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/42700e71-b7fc-4372-b45c-04f8445549f4">

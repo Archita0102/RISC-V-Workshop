@@ -961,10 +961,12 @@ Final code
 [code](https://myth.makerchip.com/sandbox/0L9fPhqvx/0Wnh3l#)
 
 
+## Day 5 - Digtial logic using TL Verilog and Makerchip
 
+### Lab Cycle Valid
 
-
-
+<p align="center"> 
+      <img src=https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/f2205903-a6c6-41ce-98ad-36a456772bff">
 
 
 
@@ -975,16 +977,7 @@ Final code
 [Acknowledgement Section]:#
 ## Acknowledgement
 1.  Kunal Ghosh, VSD Corp. Pvt. Ltd.
-2.  Sumanto Kar, Sr. Project Technical Assistant , IIT Bombay
-3.  Alwin Shaju, Colleague IIITB
-4.  Adam Teman, Associate Professor at Bar-Ilan University in Ramat Gan, Israel  
-5.  Pruthvi Parate, Colleague IIITB
-6.  Emil Jayanth Lal, Colleague IIITB
-7.  Bhargav D V, Colleague IIITB 
-8.  Geetima Kachari, Assistant Professor NITS Mirza under Nemcare group of institutions
-9.  Shivani Shah, Hardware Architect
-10. Bala Dhinesh, Engineer Tenstorrent
-11. Steve Hoover, Founder of Redwood EDA, LLC
+2. Steve Hoover, Founder of Redwood EDA, LLC
 
 
 [Reference Section]:#

@@ -965,8 +965,25 @@ Final code
 
 ### Lab Cycle Valid
 
+```
+$start = >>1$reset && !$reset ;
+$valid = $reset ? 0 : ($start || >>3$valid);
+```
+
 <p align="center"> 
-      <img src=https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/f2205903-a6c6-41ce-98ad-36a456772bff">
+      <img src=https://github.com/Archita0102/RISC-V-Workshop/assets/66164675/c8301d90-03d5-4b54-98de-188d541ff993">
+
+[code](https://www.makerchip.com/sandbox/0ERfWhw8Y/0JZhYX)
+
+
+### Lab
+
+
+
+
+
+
+
 
 
 
